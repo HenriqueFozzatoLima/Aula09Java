@@ -13,18 +13,21 @@ import javax.swing.JOptionPane;
  * @author Usuario
  */
 public class CadVeiculo extends javax.swing.JFrame {
+
     Veiculo vei = new Veiculo();
+
     /**
      * Creates new form CadVeiculo
      */
     public CadVeiculo() {
         initComponents();
     }
-   
-    public CadVeiculo(Veiculo vei){
+
+    public CadVeiculo(Veiculo vei) {
         initComponents();
         this.vei = vei;
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -153,25 +156,32 @@ public class CadVeiculo extends javax.swing.JFrame {
     }//GEN-LAST:event_jTFabActionPerformed
 
     private void jBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadastrarActionPerformed
-        
-        vei.setFabricante(jTFab.getText());
-        vei.setModelo(jTModelo.getText());
-        vei.setPreco(Double.parseDouble(jTPreco.getText()));
-      
-        JOptionPane.showMessageDialog(this, "Veículo cadastrado.");
+        try {
+            vei.setFabricante(jTFab.getText());
+            vei.setModelo(jTModelo.getText());
+            vei.setPreco(Double.parseDouble(jTPreco.getText()));
 
+            JOptionPane.showMessageDialog(this, "Veículo cadastrado.");
 
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(this, "Preencha corretamente os campos." + "\n" + "Erro: " + e);
+        }
+
+//        vei.setFabricante(jTFab.getText());
+//        vei.setModelo(jTModelo.getText());
+//        vei.setPreco(Double.parseDouble(jTPreco.getText()));
+//      
+//        JOptionPane.showMessageDialog(this, "Veículo cadastrado.");
         // TODO add your handling code here:
     }//GEN-LAST:event_jBCadastrarActionPerformed
 
     private void jBLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimparActionPerformed
-       jTFab.setText("");
-       jTModelo.setText("");
-       jTPreco.setText("");
-        
-        
-        
-        
+        jTFab.setText("");
+        jTModelo.setText("");
+        jTPreco.setText("");
+
+
     }//GEN-LAST:event_jBLimparActionPerformed
 
     /**

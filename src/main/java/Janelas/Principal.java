@@ -14,8 +14,8 @@ import javax.swing.JOptionPane;
  * @author Usuario
  */
 public class Principal extends javax.swing.JFrame {
-    Veiculo vei;   
-    Cliente cli;
+    Veiculo vei = new Veiculo();   
+    Cliente cli = new Cliente();
     /**
      * Creates new form Principal
      */
@@ -37,7 +37,7 @@ public class Principal extends javax.swing.JFrame {
         jBCadCliente = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jBCadVeiculo = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jBCadCliente1 = new javax.swing.JButton();
         jBMVeiculo = new javax.swing.JButton();
@@ -83,10 +83,10 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Veiculos"));
 
-        jButton1.setText("Cadastrar Veículo");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jBCadVeiculo.setText("Cadastrar Veículo");
+        jBCadVeiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jBCadVeiculoActionPerformed(evt);
             }
         });
 
@@ -96,14 +96,14 @@ public class Principal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(jBCadVeiculo)
                 .addGap(127, 127, 127))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addComponent(jButton1)
+                .addComponent(jBCadVeiculo)
                 .addContainerGap(53, Short.MAX_VALUE))
         );
 
@@ -183,15 +183,15 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        vei = new Veiculo();
+    private void jBCadVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadVeiculoActionPerformed
+        
         CadVeiculo cv = new CadVeiculo(vei);
         cv.setVisible(true);
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jBCadVeiculoActionPerformed
 
     private void jBCadCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadCliente1ActionPerformed
-        cli = new Cliente();
+        
         CadCliente cc = new CadCliente(cli);
         cc.setVisible(true);
 
@@ -246,9 +246,9 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBCadCliente;
     private javax.swing.JButton jBCadCliente1;
+    private javax.swing.JButton jBCadVeiculo;
     private javax.swing.JButton jBMCliente;
     private javax.swing.JButton jBMVeiculo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
